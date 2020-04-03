@@ -1,38 +1,71 @@
+body {
+  background-color: aquamarine;
+}
+
 .App {
-  text-align: center;
+  height: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#to-do-form {
+  background-color: rgb(0, 87, 128);
+  min-height: 100px;
+  width: 500px;
+  margin: 40px auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+#to-do-form textarea {
+  background-color: greenyellow;
+  border: 0;
+  width: 400px;
+  height: 100px;
+  padding: 0 20px;
+  margin: 20px;
+  font-size: 18px;
+  border-radius: 10px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#heading {
+  background-color: greenyellow;
+  border: 0;
+  width: 200px;
+  height: 50px;
+  padding: 0 20px;
+  margin: 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#date {
+  background-color: greenyellow;
+  color: white;
+  margin: 20px;
+  padding: 10px;
+  
+}
+
+#date::-webkit-inner-spin-button { display: none; }
+
+#to-do-form input:focus {
+  outline: none;
+}
+
+#to-do-form select {
+  background: rgb(13, 96, 221);
+  color: white;
+  font-weight: bolder;
+  padding: 10px;
+}
+
+#to-do-form button {
+  width: 80px;
+  height: 50px;
+  border-radius: 5px;
+  border: 0;
+  background-color: rebeccapurple;
+  cursor: pointer;
+  color: white;
+  margin: 20px;
+  font-weight: bolder;
 }
