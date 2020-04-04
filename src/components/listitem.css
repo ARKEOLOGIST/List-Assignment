@@ -1,16 +1,37 @@
 .list {
     color: white;
-    width: 300px;
     background-color: goldenrod;
     margin: 20px auto;
     border-radius: 5px;
-    border-width: 1px black solid;
+    border: 1px black solid;
 }
 
 .type {
-    display: inline;
+    text-align: center;
 }
 
-.list h3 {
+.top {
+    display: flex;
+}
+
+.data {
+    flex: 1;
+    border: 1px black solid;
+    padding: 5px;
+}
+
+.heading {
+    border: 1px black solid;
+}
+
+.information {
+    border: 1px black solid;
+}
+
+.list-button {
+    flex: 1;
+    background-color: rgb(211, 52, 24);
+    color: white;
+    border: 1px black solid;
     padding: 5px;
 }
