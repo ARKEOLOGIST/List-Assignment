@@ -4,6 +4,7 @@ body {
 
 .App {
   height: auto;
+  margin: 0 auto;
 }
 
 .error {
@@ -19,6 +20,10 @@ body {
   width: 500px;
   margin: 40px auto;
 }
+
+#todo {
+  text-align: center;
+} 
 
 #to-do-form textarea {
   background-color: greenyellow;
@@ -46,10 +51,10 @@ body {
 
 #date {
   background-color: greenyellow;
-  color: white;
+  color: black;
   margin: 20px;
   padding: 10px;
-  
+  width: 125px;
 }
 
 #date::-webkit-inner-spin-button { display: none; }

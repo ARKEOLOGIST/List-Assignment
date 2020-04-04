@@ -1,0 +1,16 @@
+.list {
+    color: white;
+    width: 300px;
+    background-color: goldenrod;
+    margin: 20px auto;
+    border-radius: 5px;
+    border-width: 1px black solid;
+}
+
+.type {
+    display: inline;
+}
+
+.list h3 {
+    padding: 5px;
+}
