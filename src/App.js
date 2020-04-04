@@ -100,7 +100,7 @@ handleInput(e)
  deleteItem(key) 
  {
    const filteredItems = this.state.data.filter(item => item.id!==key);
-   const data = { id: key };
+   const data = { id: key,mode: 2 };
    const options = { headers: {'Content-Type': 'application/json'}};
     axios.post('http://localhost:5000/data',data,options).then(
       res => {console.log(res);}
