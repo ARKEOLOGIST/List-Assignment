@@ -13,7 +13,6 @@ class App extends React.Component {
        description: '',
        date: '',
      errortext: '',
-     status: false,
      errordate: ''
    }
  }
@@ -111,30 +110,9 @@ handleInput(e)
    });
  }
 
- toggle(key)
+ updateItem = (obj,key) =>
  {
-  this.state.data.map((obj) => {
-    if (obj.id == key)
-    {
-      obj.status = !obj.status;
-    }
- });
-   if (this.state.status)
-   {
-     this.setState({
-       status: false
-     });
-   }
-   else
-   {
-     this.setState({
-       status: true
-     });
-   }
- }
-
- updateItem(obj,key)
- {
+   let flag1=0,flag2=0;
   if (obj.heading === '' || obj.description === '')
   {
     flag1 = 1;
@@ -143,21 +121,30 @@ handleInput(e)
   {
     flag2 = 1;
   }
-  if (flag1 == 1 || flag2 == 1)
+  if (flag1 === 1 || flag2 === 1)
   {
     alert('No field can be empty');
   }
   else
   {
     const mappedItems = this.state.data.map((item => {
-      if (item.id == key)
+      if (item.id === key)
       {
         item.heading = obj.heading;
         item.priority = obj.priority;
         item.description = obj.description;
         item.date = obj.date;
       }
+      return item;
    }));
+   const data = { id: obj.id,mode: 3, heading: obj.heading, priority: obj.priority, description: obj.description, date: obj.date };;
+   const options = { headers: {'Content-Type': 'application/json'}};
+    axios.post('http://localhost:5000/data',data,options).then(
+      res => {console.log(res);}
+    );
+   this.setState({
+     data: [...mappedItems]
+   });
   }
 
  }
@@ -170,16 +157,17 @@ handleInput(e)
     items = (
      <div>
       {this.state.data.map(e => {
+        //let obj={ id: e.id, heading: e.heading, priority: e.priority, description: e.description, date: e.date };
       return <ListItem
          key={e.id}
+         id={e.id}
          heading={e.heading}
          priority={e.priority}
          description={e.description}
          date={e.date}
-         status={this.state.status}
          handle={this.handleInput.bind(this)}
          deleteItem={this.deleteItem.bind(this,e.id)}
-         updateItem={this.updateItem.bind(this,obj,e.id)}
+         updateItem={this.updateItem}
       />
     })}
     </div>
